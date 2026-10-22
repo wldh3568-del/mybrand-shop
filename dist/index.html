@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="좋아하는 브랜드만 모아 쇼핑하는 나만의 브랜드 편집숍">
+  <title>MYBRAND — 나만의 브랜드 쇼핑몰</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231b48e0'/%3E%3Cpath d='M16 43V20h7l9 13 9-13h7v23h-7V31l-9 12-9-12v12z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="announcement"><span>ONLINE ONLY</span> 오늘의 셀렉션 무료배송</div>
+  <header class="site-header">
+    <a class="logo" href="#" aria-label="MYBRAND 홈">MY<span>BRAND</span></a>
+    <nav class="main-nav" aria-label="주 메뉴">
+      <button class="nav-link active" data-view="for-you">For You</button>
+      <button class="nav-link" data-view="new">신상품</button>
+      <button class="nav-link" data-view="sale">세일</button>
+      <button class="nav-link" data-view="brands">브랜드</button>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button search-toggle" aria-label="검색 열기">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      </button>
+      <button class="icon-button wishlist-open" aria-label="찜 목록">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg>
+        <span class="count-badge wishlist-count">0</span>
+      </button>
+      <button class="icon-button cart-open" aria-label="장바구니">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg>
+        <span class="count-badge cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="search-panel" aria-hidden="true">
+    <div class="search-inner">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <input id="searchInput" type="search" placeholder="브랜드 또는 상품을 검색하세요" aria-label="상품 검색">
+      <button class="search-close">닫기</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="brand-strip" aria-labelledby="brand-title">
+      <div class="section-kicker" id="brand-title">MY BRANDS <span>6</span></div>
+      <div class="brand-list">
+        <button class="brand-pill active" data-brand="all"><b>ALL</b><span>전체</span></button>
+        <button class="brand-pill" data-brand="MARGESHERWOOD"><b>MS</b><span>마지셔우드</span></button>
+        <button class="brand-pill" data-brand="RECTO"><b>RC</b><span>렉토</span></button>
+        <button class="brand-pill" data-brand="LOW CLASSIC"><b>LC</b><span>로우클래식</span></button>
+        <button class="brand-pill" data-brand="AMOMENTO"><b>AM</b><span>아모멘토</span></button>
+        <button class="brand-pill" data-brand="ROKH"><b>RK</b><span>로크</span></button>
+        <button class="brand-pill add-brand" data-brand="add"><b>+</b><span>브랜드 추가</span></button>
+      </div>
+    </section>
+
+    <section class="hero" aria-label="시즌 컬렉션">
+      <img src="assets/monochrome-hero.webp" alt="블랙 레더 스타일의 흑백 패션 에디토리얼">
+      <div class="hero-overlay"></div>
+      <div class="hero-copy">
+        <p>PERSONAL EDIT · DROP 02</p>
+        <h1>취향은 더<br>선명해진다.</h1>
+        <span>팔로우한 브랜드의 새로운 블랙 에디션을 만나보세요.</span>
+        <button class="primary-button" data-scroll-products>컬렉션 보기</button>
+      </div>
+      <div class="hero-index"><b>01</b><span></span><em>03</em></div>
+    </section>
+
+    <section class="shop-section" id="products">
+      <div class="shop-heading">
+        <div>
+          <p class="eyebrow">FOR YOUR EYES ONLY</p>
+          <h2>오늘의 셀렉션</h2>
+          <p class="result-copy">취향을 바탕으로 고른 <strong id="resultCount">8</strong>개의 상품</p>
+        </div>
+        <div class="sort-wrap">
+          <label for="sortSelect">정렬</label>
+          <select id="sortSelect">
+            <option value="recommended">추천순</option>
+            <option value="new">신상품순</option>
+            <option value="low">낮은 가격순</option>
+            <option value="high">높은 가격순</option>
+          </select>
+        </div>
+      </div>
+      <div class="category-tabs" role="tablist" aria-label="카테고리">
+        <button class="category-tab active" data-category="all">전체</button>
+        <button class="category-tab" data-category="아우터">아우터</button>
+        <button class="category-tab" data-category="상의">상의</button>
+        <button class="category-tab" data-category="하의">하의</button>
+        <button class="category-tab" data-category="신발">신발</button>
+        <button class="category-tab" data-category="액세서리">액세서리</button>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <div class="empty-state" hidden>
+        <h3>조건에 맞는 상품이 없어요</h3>
+        <p>다른 브랜드나 카테고리를 선택해 보세요.</p>
+        <button class="secondary-button reset-filter">필터 초기화</button>
+      </div>
+    </section>
+
+    <section class="insight-band">
+      <div><span>이번 주</span><strong>새 상품 24개</strong></div>
+      <div><span>가격이 내려간</span><strong>찜 상품 3개</strong></div>
+      <div><span>팔로우 중</span><strong>브랜드 6개</strong></div>
+      <button class="secondary-button">취향 설정</button>
+    </section>
+  </main>
+
+  <div class="drawer-backdrop" hidden></div>
+  <aside class="drawer" aria-hidden="true" aria-label="장바구니">
+    <div class="drawer-head"><div><p>MY BAG</p><h2>장바구니</h2></div><button class="drawer-close" aria-label="닫기">×</button></div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-footer">
+      <div><span>합계</span><strong id="cartTotal">₩0</strong></div>
+      <button class="checkout-button">주문하기</button>
+      <small>브랜드별 배송비가 결제 단계에서 표시됩니다.</small>
+    </div>
+  </aside>
+
+  <dialog class="product-modal" id="productModal">
+    <button class="modal-close" aria-label="상품 상세 닫기">×</button>
+    <div class="modal-product-image product-art"><div class="product-sprite"></div></div>
+    <div class="modal-content">
+      <p class="modal-brand"></p><h2 class="modal-name"></h2><p class="modal-price"></p>
+      <p class="modal-desc">정제된 실루엣과 섬세한 소재감이 돋보이는 아이템입니다. 지금 선택한 브랜드의 새로운 시즌을 만나보세요.</p>
+      <label for="sizeSelect">옵션</label>
+      <select id="sizeSelect"><option>옵션을 선택하세요</option><option>FREE</option><option>S</option><option>M</option></select>
+      <button class="checkout-button modal-add">장바구니 담기</button>
+    </div>
+  </dialog>
+
+  <nav class="mobile-nav" aria-label="모바일 메뉴">
+    <button class="active">홈</button><button data-scroll-products>쇼핑</button><button class="wishlist-open">찜</button><button class="cart-open">장바구니</button>
+  </nav>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
